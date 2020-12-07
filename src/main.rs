@@ -1,3 +1,8 @@
+mod util;
+use util::read_line;
+
 fn main() {
-    println!("Hello, world!");
+    let input = read_line();
+
+    println!("{}", input)
 }
