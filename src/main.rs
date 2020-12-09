@@ -1,8 +1,15 @@
 mod util;
-use util::read_line;
+mod game;
+mod team;
+mod character;
+mod weapon;
+
+use game::Game;
 
 fn main() {
-    let input = read_line();
+    let mut g = Game::new();
+    g.init();
+    g.start();
 
-    println!("{}", input)
+    println!("finished.")
 }
