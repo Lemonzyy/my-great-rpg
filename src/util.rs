@@ -6,7 +6,7 @@ pub fn read_line() -> String {
         Ok(..) => {
             input.truncate(input.len() - 1);
             return input;
-        },
+        }
         Err(error) => println!("Error during read_line: {}", error),
     }
     read_line()
