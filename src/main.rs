@@ -1,15 +1,15 @@
+use game::Game;
+
 mod util;
 mod game;
 mod team;
 mod character;
 mod weapon;
 
-use game::Game;
-
 fn main() {
-    let mut g = Game::new();
-    g.init();
-    g.start();
+    Game::new()
+        .init()
+        .start();
 
     println!("finished.")
 }

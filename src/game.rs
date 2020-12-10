@@ -1,28 +1,34 @@
 use std::io::{self, Write};
+use std::time::Duration;
+
+use ordinal::Ordinal;
+
+use super::character::CharacterType;
 use super::team::Team;
 use super::util::read_line;
-use super::character::CharacterType;
-use ordinal::Ordinal;
+
+const TEAMS_NUMBER: u8 = 3;
+const CHARACTERS_NUMBER: u8 = 3;
 
 pub struct Game {
     teams: Vec<Team>,
-    is_first_team: bool,
+    current_team_i: u8,
 }
 
 impl Game {
     pub fn new() -> Self {
         Game {
             teams: vec![],
-            is_first_team: true,
+            current_team_i: 0,
         }
     }
 
-    pub fn init(&mut self) {
-        for i in 0u8..=1u8 {
+    pub fn init(&mut self) -> &mut Self {
+        for i in 0u8..TEAMS_NUMBER {
             let team_name = self.ask_team_name(i);
             let mut characters = vec![];
 
-            for j in 0u8..3u8 {
+            for j in 0u8..CHARACTERS_NUMBER {
                 let character_type = self.ask_character_type(j);
                 let name = self.ask_character_name();
                 let character = character_type.get_character(name);
@@ -35,6 +41,32 @@ impl Game {
                 characters,
             })
         }
+        self
+    }
+
+    pub fn start(&mut self) -> &Self {
+        while self.alive_teams() > 1 {
+            let current_team = self.get_current_team();
+            current_team.print_comp();
+
+            self.next_team();
+        }
+
+        self
+    }
+
+    fn get_current_team(&self) -> &Team {
+        &self.teams[self.current_team_i as usize]
+    }
+
+    fn next_team(&mut self) {
+        let max = self.teams.len();
+
+        if self.current_team_i + 1 == max as u8 {
+            self.current_team_i = 0
+        } else {
+            self.current_team_i += 1
+        };
     }
 
     fn ask_team_name(&self, team_index: u8) -> String {
@@ -86,7 +118,13 @@ Number: ", Ordinal(character_index + 1));
         name
     }
 
-    pub fn start(&self) {
-        unimplemented!()
+    fn alive_teams(&self) -> u8 {
+        let mut total: u8 = 0;
+
+        for team in self.teams.iter() {
+            if team.is_alive() { total += 1 }
+        }
+
+        total
     }
 }
