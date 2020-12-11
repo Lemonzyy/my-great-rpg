@@ -1,10 +1,5 @@
 use std::fmt::{self, Display, Formatter};
 
-pub const SWORD: Weapon = Weapon::new(WeaponType::Sword, 10).unwrap();
-pub const WAND: Weapon = Weapon::new(WeaponType::Wand, 10).unwrap();
-pub const BOW: Weapon = Weapon::new(WeaponType::Bow, 10).unwrap();
-pub const FIST_BUMP: Weapon = Weapon::new(WeaponType::FistBump, 10).unwrap();
-
 pub struct Weapon {
     w_type: WeaponType,
     damage: i32,
@@ -33,6 +28,17 @@ pub enum WeaponType {
     Wand,
     Bow,
     FistBump,
+}
+
+impl WeaponType {
+    pub fn get_weapon(&self) -> Weapon {
+        match self {
+            Self::Sword => Weapon::new(Self::Sword, 10).unwrap(),
+            Self::Wand => Weapon::new(Self::Wand, 10).unwrap(),
+            Self::Bow => Weapon::new(Self::Bow, 10).unwrap(),
+            Self::FistBump => Weapon::new(Self::FistBump, 10).unwrap(),
+        }
+    }
 }
 
 impl Display for WeaponType {
