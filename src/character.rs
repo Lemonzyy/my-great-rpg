@@ -1,4 +1,5 @@
-use crate::weapon::{Weapon, WeaponType};
+use super::weapon::{Weapon, WeaponType};
+use std::fmt::{self, Display, Formatter};
 
 pub struct Character {
     pub(crate) name: String,
@@ -12,8 +13,17 @@ impl Character {
     pub fn is_alive(&self) -> bool {
         self.life > 0
     }
+
+    pub fn format_life(&self) -> String {
+        format!("{}/{}", self.life, self.max_life)
+    }
+
+    pub fn print_life(&self) {
+        print!("{}", self.format_life())
+    }
 }
 
+#[derive(Debug)]
 pub enum CharacterType {
     Soldier,
     Mage,
@@ -53,5 +63,11 @@ impl CharacterType {
                 weapon: WeaponType::FistBump.get_weapon(),
             }
         }
+    }
+}
+
+impl Display for CharacterType {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f, "{:?}", self)
     }
 }
