@@ -49,6 +49,21 @@ impl Game {
                 characters,
             })
         }
+
+        clear_console();
+        print_title("Recap time!");
+        println!();
+
+        sleep(Duration::from_millis(500));
+
+        for team in self.teams.iter() {
+            team.print_comp();
+            sleep(Duration::from_secs(1));
+        }
+
+        println!("\nPress any key to start!");
+        read_line();
+
         self
     }
 
