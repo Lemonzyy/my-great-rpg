@@ -14,9 +14,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/character.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +169,7 @@
       <workItem from="1607529109369" duration="14911000" />
       <workItem from="1607629002922" duration="6125000" />
       <workItem from="1607637750253" duration="80000" />
-      <workItem from="1607692573361" duration="26241000" />
+      <workItem from="1607692573361" duration="29090000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -283,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607718091682</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;">
+      <created>1607725970288</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607725970288</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +325,8 @@
     <MESSAGE value="Add a welcome title in &quot;Game&quot; -&gt; init&#10;Transform false tabs to a true &quot;\t&quot; char in the &quot;ask_character_type&quot; fn in &quot;Game&quot;&#10;Reformat imports in game.rs" />
     <MESSAGE value="Add a more complete description of team composition in &quot;Team&quot; -&gt; &quot;print_comp&quot;&#10;Add a function for converting the &quot;WeaponType&quot; values into coherent strings" />
     <MESSAGE value="Add a recap time after the game is initialized in &quot;Game&quot; -&gt; &quot;init&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a recap time after the game is initialized in &quot;Game&quot; -&gt; &quot;init&quot;" />
+    <MESSAGE value="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
