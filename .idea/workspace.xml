@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/character.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/weapon.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,11 +69,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package my-great-rpg --bin my-great-rpg" />
@@ -104,7 +98,9 @@
       <workItem from="1607458723066" duration="7747000" />
       <workItem from="1607512330402" duration="58000" />
       <workItem from="1607529109369" duration="14911000" />
-      <workItem from="1607629002922" duration="5895000" />
+      <workItem from="1607629002922" duration="6125000" />
+      <workItem from="1607637750253" duration="80000" />
+      <workItem from="1607692573361" duration="1762000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -148,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607633719655</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add a &quot;WeaponType&quot; enum #1&#10;Update character initialization with the &quot;WeaponType&quot; enum">
+      <created>1607637679056</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607637679056</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +176,8 @@
     <MESSAGE value="Add &quot;Game&quot; struct/impl&#10;    -&gt; &quot;init&quot; function complete&#10;    -&gt; &quot;start&quot; to implement&#10;Add &quot;Team&quot; struct&#10;Add &quot;Character&quot; struct&#10;Add &quot;CharacterType&quot; enum/impl&#10;    -&gt; &quot;get_character&quot; function complete&#10;Add &quot;Weapon&quot; struct/impl&#10;    -&gt; &quot;new&quot; function complete&#10;    -&gt; &quot;is_offensive&quot; function complete" />
     <MESSAGE value="Implement &quot;is_alive &quot; in &quot;Character&quot; and &quot;Team&quot;&#10;Implement &quot;print_comp&quot; in &quot;Team&quot;&#10;Add placeholder life for characters" />
     <MESSAGE value="&quot;init&quot; and &quot;start&quot; in &quot;Game&quot; now return self&#10;New constants &quot;TEAM_NUMBER&quot; and &quot;CHARACTERS_NUMBER&quot;&#10;Start the &quot;start&quot; function with round by round team composition" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;init&quot; and &quot;start&quot; in &quot;Game&quot; now return self&#10;New constants &quot;TEAM_NUMBER&quot; and &quot;CHARACTERS_NUMBER&quot;&#10;Start the &quot;start&quot; function with round by round team composition" />
+    <MESSAGE value="Add a &quot;WeaponType&quot; enum #1&#10;Update character initialization with the &quot;WeaponType&quot; enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a &quot;WeaponType&quot; enum #1&#10;Update character initialization with the &quot;WeaponType&quot; enum" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

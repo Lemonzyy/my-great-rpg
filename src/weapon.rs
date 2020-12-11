@@ -1,5 +1,10 @@
 use std::fmt::{self, Display, Formatter};
 
+pub const SWORD: Weapon = Weapon::new(WeaponType::Sword, 10).unwrap();
+pub const WAND: Weapon = Weapon::new(WeaponType::Wand, 10).unwrap();
+pub const BOW: Weapon = Weapon::new(WeaponType::Bow, 10).unwrap();
+pub const FIST_BUMP: Weapon = Weapon::new(WeaponType::FistBump, 10).unwrap();
+
 pub struct Weapon {
     w_type: WeaponType,
     damage: i32,

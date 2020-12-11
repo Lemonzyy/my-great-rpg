@@ -1,6 +1,4 @@
-use crate::weapon::WeaponType;
-
-use super::weapon::Weapon;
+use crate::weapon::{BOW, FIST_BUMP, SWORD, WAND, Weapon, WeaponType};
 
 pub struct Character {
     pub(crate) name: String,
@@ -31,28 +29,28 @@ impl CharacterType {
                 char_type: Self::Soldier,
                 life: 100,
                 max_life: 100,
-                weapon: Weapon::new(WeaponType::Sword, 10).unwrap(),
+                weapon: SWORD,
             },
             Self::Mage => Character {
                 name,
                 char_type: Self::Mage,
                 life: 80,
                 max_life: 80,
-                weapon: Weapon::new(WeaponType::Wand, 10).unwrap(),
+                weapon: WAND,
             },
             Self::Archer => Character {
                 name,
                 char_type: Self::Archer,
                 life: 100,
                 max_life: 100,
-                weapon: Weapon::new(WeaponType::Bow, 10).unwrap(),
+                weapon: BOW,
             },
             Self::Colossus => Character {
                 name,
                 char_type: Self::Colossus,
                 life: 150,
                 max_life: 150,
-                weapon: Weapon::new(WeaponType::FistBump, 10).unwrap(),
+                weapon: FIST_BUMP,
             }
         }
     }
