@@ -32,11 +32,11 @@ impl Game {
         clear_console();
         print_title("Welcome to the My Great RPG game !");
 
-        for i in 0u8..TEAMS_NUMBER {
+        for i in 0..TEAMS_NUMBER {
             let team_name = self.ask_team_name(i);
             let mut characters = vec![];
 
-            for j in 0u8..CHARACTERS_NUMBER {
+            for j in 0..CHARACTERS_NUMBER {
                 let character_type = self.ask_character_type(j);
                 let name = self.ask_character_name();
                 let character = character_type.get_character(name);
@@ -118,8 +118,14 @@ Number: ", Ordinal(character_index + 1));
             io::stdout().flush().expect("Error while stdout flushing");
             char_type = read_line();
 
-            let char_type_u8 = &char_type.parse::<u8>().unwrap();
-            if !char_type.is_empty() && (1..=4).contains(char_type_u8) { break; }
+            match &char_type.parse::<u8>() {
+                Ok(val) => {
+                    if !char_type.is_empty() && (1..=4).contains(val) { break; }
+                },
+                Err(_) => {
+                    println!("Please provide a valid number!");
+                }
+            };
         }
 
         match &*char_type {

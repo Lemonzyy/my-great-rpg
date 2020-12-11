@@ -16,12 +16,11 @@ impl Team {
         alive
     }
 
-    pub fn print_comp(&self) {
+    pub fn get_formatted_chars(&self) -> String {
         let mut s: String = String::new();
-
         for (i, c) in self.characters.iter().enumerate() {
             s.push_str(&*format!(
-                "\n\t{i}. {char_type} character -> {name}: {life} of life, attack with {weapon}",
+                "\n\t{i}. {char_type} character -> {name}: {life}, attack with {weapon}",
                 i = i + 1,
                 name = c.name,
                 char_type = c.char_type,
@@ -29,7 +28,10 @@ impl Team {
                 weapon = c.weapon.w_type.get_name()
             ))
         }
+        s
+    }
 
-        println!("The team {} is composed of:{}", self.name, s);
+    pub fn print_comp(&self) {
+        println!("The team {} is composed of:{}", self.name, self.get_formatted_chars());
     }
 }

@@ -15,7 +15,7 @@ impl Character {
     }
 
     pub fn format_life(&self) -> String {
-        format!("{}/{}", self.life, self.max_life)
+        format!("{}/{}❤", self.life, self.max_life)
     }
 
     pub fn print_life(&self) {
