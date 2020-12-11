@@ -1,8 +1,8 @@
 use std::fmt::{self, Display, Formatter};
 
 pub struct Weapon {
-    w_type: WeaponType,
-    damage: i32,
+    pub(crate) w_type: WeaponType,
+    pub(crate) damage: i32,
 }
 
 impl Weapon {
@@ -38,6 +38,14 @@ impl WeaponType {
             Self::Bow => Weapon::new(Self::Bow, 10).unwrap(),
             Self::FistBump => Weapon::new(Self::FistBump, 10).unwrap(),
         }
+    }
+    pub fn get_name(&self) -> String {
+        match self {
+            Self::Sword => "Sword",
+            Self::Wand => "Wand",
+            Self::Bow => "Bow",
+            Self::FistBump => "Fist Bump",
+        }.to_string()
     }
 }
 
