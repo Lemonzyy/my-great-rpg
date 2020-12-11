@@ -1,11 +1,16 @@
-use std::io::{self, Write};
-use std::time::Duration;
+use std::{
+    io::{self, Write},
+    thread::sleep,
+    time::Duration,
+};
 
 use ordinal::Ordinal;
 
-use super::character::CharacterType;
-use super::team::Team;
-use super::util::read_line;
+use super::{
+    character::CharacterType,
+    team::Team,
+    util::{clear_console, print_title, read_line},
+};
 
 const TEAMS_NUMBER: u8 = 3;
 const CHARACTERS_NUMBER: u8 = 3;
@@ -24,6 +29,9 @@ impl Game {
     }
 
     pub fn init(&mut self) -> &mut Self {
+        clear_console();
+        print_title("Welcome to the My Great RPG game !");
+
         for i in 0u8..TEAMS_NUMBER {
             let team_name = self.ask_team_name(i);
             let mut characters = vec![];
@@ -72,7 +80,7 @@ impl Game {
     fn ask_team_name(&self, team_index: u8) -> String {
         let mut team_name;
         loop {
-            print!("{} team name: ", Ordinal(team_index + 1));
+            print!("\n{} team name: ", Ordinal(team_index + 1));
             io::stdout().flush().expect("Error while stdout flushing");
 
             team_name = read_line();
@@ -86,16 +94,17 @@ impl Game {
         let mut char_type;
         loop {
             print!("\
-What's gonna be your {} character ?
-    1. soldier
-    2. mage
-    3. archer
-    4. colossus
+What's gonna be your {} character?
+\t1. soldier
+\t2. mage
+\t3. archer
+\t4. colossus
 Number: ", Ordinal(character_index + 1));
             io::stdout().flush().expect("Error while stdout flushing");
             char_type = read_line();
 
-            if !char_type.is_empty() && (1..=4).contains(&char_type.parse::<u8>().unwrap()) { break; }
+            let char_type_u8 = &char_type.parse::<u8>().unwrap();
+            if !char_type.is_empty() && (1..=4).contains(char_type_u8) { break; }
         }
 
         match &*char_type {
@@ -109,7 +118,7 @@ Number: ", Ordinal(character_index + 1));
     fn ask_character_name(&self) -> String {
         let mut name;
         loop {
-            print!("What's gonna be his name ? ");
+            print!("What's gonna be his name? ");
             io::stdout().flush().expect("Error while stdout flushing");
             name = read_line();
 

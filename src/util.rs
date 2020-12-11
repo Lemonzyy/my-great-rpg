@@ -16,7 +16,7 @@ pub fn read_line() -> String {
 
 /// This function clear the console and put the cursor at the top right.
 pub fn clear_console() {
-    print!("\x1B[2J\x1B[1;1H");
+    println!("\x1B[2J\x1B[1;1H");
 }
 
 pub fn print_title(str: &str) {

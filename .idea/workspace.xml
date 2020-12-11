@@ -15,7 +15,9 @@
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +81,19 @@
       <command value="cargo doc" />
     </option>
   </component>
-  <component name="RunManager" selected="Cargo.Run">
+  <component name="RunManager" selected="Cargo.Run Release">
+    <configuration name="Run Release" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run --package my-great-rpg --bin my-great-rpg --release" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package my-great-rpg --bin my-great-rpg" />
@@ -121,6 +135,12 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Cargo.Run" />
+      <item itemvalue="Cargo.Run Release" />
+      <item itemvalue="Cargo.check" />
+      <item itemvalue="Cargo.doc" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Cargo.doc" />
@@ -147,7 +167,7 @@
       <workItem from="1607529109369" duration="14911000" />
       <workItem from="1607629002922" duration="6125000" />
       <workItem from="1607637750253" duration="80000" />
-      <workItem from="1607692573361" duration="8467000" />
+      <workItem from="1607692573361" duration="17441000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -219,7 +239,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607702607130</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix a problem in the &quot;read_line&quot; function where the last part of the input was not correctly deleted&#10;Add &quot;clear_console&quot; function in util&#10;Add small documentation for functions in &quot;util.rs&quot;">
+      <created>1607704397493</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607704397493</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add a title printing function with a separator">
+      <created>1607710781839</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607710781839</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Make &quot;CharacterType&quot; printable -&gt; impl Display&#10;Add &quot;format_life&quot; and &quot;print_life&quot; in &quot;Character&quot;">
+      <created>1607710851194</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607710851194</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +289,10 @@
     <MESSAGE value="Fix #1: add weapons type enum&#10;Add weapons constants" />
     <MESSAGE value="Fix a #1 problem&#10;Convert the way of getting &quot;Weapon&quot; to the same as &quot;Character&quot;" />
     <MESSAGE value="Add small documentation for functions in &quot;util.rs&quot;&#10;Add &quot;clear_console&quot; function in util" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add small documentation for functions in &quot;util.rs&quot;&#10;Add &quot;clear_console&quot; function in util" />
+    <MESSAGE value="Fix a problem in the &quot;read_line&quot; function where the last part of the input was not correctly deleted&#10;Add &quot;clear_console&quot; function in util&#10;Add small documentation for functions in &quot;util.rs&quot;" />
+    <MESSAGE value="Add a title printing function with a separator" />
+    <MESSAGE value="Make &quot;CharacterType&quot; printable -&gt; impl Display&#10;Add &quot;format_life&quot; and &quot;print_life&quot; in &quot;Character&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make &quot;CharacterType&quot; printable -&gt; impl Display&#10;Add &quot;format_life&quot; and &quot;print_life&quot; in &quot;Character&quot;" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
