@@ -15,7 +15,6 @@
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/character" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hematite" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -84,50 +83,72 @@
     </option>
   </component>
   <component name="RunManager" selected="Cargo.Run">
-    <configuration name="Run Release" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <configuration name="Build" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
+      <option name="command" value="build --package my-great-rpg --bin my-great-rpg --release" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="channel" value="DEFAULT" />
-      <option name="command" value="run --package my-great-rpg --bin my-great-rpg --release" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run Release" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package my-great-rpg --bin my-great-rpg --release" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="run --package my-great-rpg --bin my-great-rpg" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="check" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="doc" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="channel" value="DEFAULT" />
       <option name="command" value="doc" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="channel" value="DEFAULT" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
@@ -138,8 +159,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cargo.Run" />
+      <item itemvalue="Cargo.Build" />
       <item itemvalue="Cargo.Run Release" />
+      <item itemvalue="Cargo.Run" />
       <item itemvalue="Cargo.check" />
       <item itemvalue="Cargo.doc" />
     </list>
@@ -158,7 +180,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="" />
-      <changelist id="" name="Add small documentation for functions in &quot;util.rs&quot; Add &quot;clear_console&quot; function in util" comment="" />
       <created>1607363870815</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -169,7 +190,12 @@
       <workItem from="1607529109369" duration="14911000" />
       <workItem from="1607629002922" duration="6125000" />
       <workItem from="1607637750253" duration="80000" />
-      <workItem from="1607692573361" duration="29090000" />
+      <workItem from="1607692573361" duration="30155000" />
+      <workItem from="1607778701979" duration="1311000" />
+      <workItem from="1607783497275" duration="6736000" />
+      <workItem from="1607806589805" duration="32000" />
+      <workItem from="1608129403563" duration="75000" />
+      <workItem from="1608129512213" duration="5546000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -290,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607725970288</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions">
+      <created>1607728840111</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607728840111</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +359,8 @@
     <MESSAGE value="Add a more complete description of team composition in &quot;Team&quot; -&gt; &quot;print_comp&quot;&#10;Add a function for converting the &quot;WeaponType&quot; values into coherent strings" />
     <MESSAGE value="Add a recap time after the game is initialized in &quot;Game&quot; -&gt; &quot;init&quot;" />
     <MESSAGE value="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;" />
+    <MESSAGE value="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

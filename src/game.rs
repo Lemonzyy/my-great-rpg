@@ -7,9 +7,9 @@ use std::{
 use ordinal::Ordinal;
 
 use super::{
-    character::CharacterType,
+    character::{Character, CharacterType},
     team::Team,
-    util::{clear_console, print_title, read_line},
+    util::{ask, clear_console, print_title, read_line},
 };
 
 const TEAMS_NUMBER: u8 = 3;
@@ -33,12 +33,43 @@ impl Game {
         print_title("Welcome to the My Great RPG game !");
 
         for i in 0..TEAMS_NUMBER {
-            let team_name = self.ask_team_name(i);
+            let team_name = ask(
+                || print!("\n{} team name: ", Ordinal(i + 1)),
+                |_| true,
+                |_| {},
+            ).unwrap();
+
             let mut characters = vec![];
 
             for j in 0..CHARACTERS_NUMBER {
-                let character_type = self.ask_character_type(j);
-                let name = self.ask_character_name();
+                let character_type = match &*ask(
+                    || print!("\
+What's gonna be your {} character?
+\t1. soldier
+\t2. mage
+\t3. archer
+\t4. colossus
+Number: ", Ordinal(j + 1)),
+                    |str| {
+                        match &str.parse::<u8>() {
+                            Ok(val) => (1..=4).contains(val),
+                            Err(_) => false
+                        }
+                    },
+                    |str| println!("{} is not a valid number!", str),
+                ).unwrap() {
+                    "1" => CharacterType::Soldier,
+                    "2" => CharacterType::Mage,
+                    "3" => CharacterType::Archer,
+                    "4" | _ => CharacterType::Colossus
+                };
+
+                let name = ask(
+                    || print!("What's gonna be his name? "),
+                    |_| true,
+                    |_| {},
+                ).unwrap();
+
                 let character = character_type.get_character(name);
 
                 characters.push(character);
@@ -69,8 +100,17 @@ impl Game {
 
     pub fn start(&mut self) -> &Self {
         while self.alive_teams() > 1 {
+            clear_console();
+
             let current_team = self.get_current_team();
-            current_team.print_comp();
+
+            if current_team.is_alive() {
+                let character = self.ask_which_character(current_team);
+
+                print!("{}: ", character.name);
+                println!("{}", character.format_life());
+                io::stdout().flush().expect("Error while stdout flushing");
+            }
 
             self.next_team();
         }
@@ -92,60 +132,29 @@ impl Game {
         };
     }
 
-    fn ask_team_name(&self, team_index: u8) -> String {
-        let mut team_name;
-        loop {
-            print!("\n{} team name: ", Ordinal(team_index + 1));
-            io::stdout().flush().expect("Error while stdout flushing");
-
-            team_name = read_line();
-
-            if !team_name.is_empty() { break; }
-        }
-        team_name
-    }
-
-    fn ask_character_type(&self, character_index: u8) -> CharacterType {
-        let mut char_type;
-        loop {
-            print!("\
-What's gonna be your {} character?
-\t1. soldier
-\t2. mage
-\t3. archer
-\t4. colossus
-Number: ", Ordinal(character_index + 1));
-            io::stdout().flush().expect("Error while stdout flushing");
-            char_type = read_line();
-
-            match &char_type.parse::<u8>() {
-                Ok(val) => {
-                    if !char_type.is_empty() && (1..=4).contains(val) { break; }
-                },
+    fn ask_which_character<'a>(&self, current_team: &'a Team) -> &'a Character {
+        let parse = |input: &String| {
+            match input.parse::<usize>() {
+                Ok(val) => val,
                 Err(_) => {
                     println!("Please provide a valid number!");
+                    0usize
                 }
-            };
-        }
+            }
+        };
 
-        match &*char_type {
-            "1" => CharacterType::Soldier,
-            "2" => CharacterType::Mage,
-            "3" => CharacterType::Archer,
-            "4" | _ => CharacterType::Colossus
-        }
-    }
-
-    fn ask_character_name(&self) -> String {
-        let mut name;
-        loop {
-            print!("What's gonna be his name? ");
-            io::stdout().flush().expect("Error while stdout flushing");
-            name = read_line();
-
-            if !name.is_empty() { break; }
-        }
-        name
+        &current_team.characters[parse(&ask(
+            || print!(
+                "Team {}, which character do you want to use? {}\nNumber: ",
+                current_team.name,
+                current_team.get_formatted_chars(),
+            ),
+            |str| {
+                (1..=current_team.characters.len())
+                    .contains(&parse(str))
+            },
+            |_| {},
+        ).unwrap()) - 1]
     }
 
     fn alive_teams(&self) -> u8 {

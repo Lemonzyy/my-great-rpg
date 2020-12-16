@@ -1,5 +1,4 @@
 use std::{
-    env::Args,
     io::{self, Write},
 };
 
@@ -17,7 +16,7 @@ pub fn read_line() -> String {
     read_line()
 }
 
-/// This function clear the console and put the cursor at the top right.
+/// This function clear the console and put the cursor at the top left.
 pub fn clear_console() {
     println!("\x1B[2J\x1B[1;1H");
 }
