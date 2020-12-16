@@ -14,6 +14,7 @@ use super::{
 
 const TEAMS_NUMBER: u8 = 3;
 const CHARACTERS_NUMBER: u8 = 3;
+const VERSION: Option<&'static str> = option_env!("CARGO_PKG_VERSION");
 
 pub struct Game {
     teams: Vec<Team>,
@@ -30,7 +31,7 @@ impl Game {
 
     pub fn init(&mut self) -> &mut Self {
         clear_console();
-        print_title("Welcome to the My Great RPG game !");
+        print_title(format!("Welcome to the My Great RPG game ! v{}", VERSION.unwrap_or("unknown")).as_str());
 
         for i in 0..TEAMS_NUMBER {
             let team_name = ask(

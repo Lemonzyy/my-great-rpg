@@ -13,9 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +193,7 @@
       <workItem from="1607783497275" duration="6736000" />
       <workItem from="1607806589805" duration="32000" />
       <workItem from="1608129403563" duration="75000" />
-      <workItem from="1608129512213" duration="5546000" />
+      <workItem from="1608129512213" duration="6426000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -323,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607728840111</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Usage of the new &quot;ask&quot; fn&#10;    -&gt; &quot;ask_team_name&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_type&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_name&quot; -&gt; fn&#10;    -&gt; new fn &quot;ask_which_character&quot;&#10;Fix a typo in the &quot;clear_console&quot; fn&#10;Game mechanics are not implemented yet">
+      <created>1608153006759</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1608153006759</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +365,8 @@
     <MESSAGE value="Add a recap time after the game is initialized in &quot;Game&quot; -&gt; &quot;init&quot;" />
     <MESSAGE value="Make team composition use a new function &quot;get_formatted_chars&quot;&#10;Update &quot;ask_character_type&quot; in &quot;Game&quot; for showing an error message when the string can't be parsed correctly&#10;Small update for &quot;format_life&quot; in &quot;Character&quot;&#10;Small update in teams and chars loop in &quot;Game&quot;" />
     <MESSAGE value="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions" />
+    <MESSAGE value="Usage of the new &quot;ask&quot; fn&#10;    -&gt; &quot;ask_team_name&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_type&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_name&quot; -&gt; fn&#10;    -&gt; new fn &quot;ask_which_character&quot;&#10;Fix a typo in the &quot;clear_console&quot; fn&#10;Game mechanics are not implemented yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Usage of the new &quot;ask&quot; fn&#10;    -&gt; &quot;ask_team_name&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_type&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_name&quot; -&gt; fn&#10;    -&gt; new fn &quot;ask_which_character&quot;&#10;Fix a typo in the &quot;clear_console&quot; fn&#10;Game mechanics are not implemented yet" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
