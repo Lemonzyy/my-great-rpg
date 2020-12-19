@@ -38,7 +38,7 @@ impl Team {
         println!("The team {} is composed of:{}", self.name, self.get_formatted_chars());
     }
 
-    pub fn ask_which_character(&self) -> &Character {
+    pub fn ask_which_character_i(&self) -> usize {
         let parse = |input: &String| {
             match input.parse::<usize>() {
                 Ok(val) => val,
@@ -62,6 +62,6 @@ impl Team {
             |str| println!("'{}' is not a valid number!", str),
         ).unwrap());
 
-        &self.characters[input - 1]
+        input - 1
     }
 }

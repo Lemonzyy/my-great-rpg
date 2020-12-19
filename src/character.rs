@@ -1,7 +1,6 @@
 use std::fmt::{self, Display, Formatter};
 
 use super::{
-    team::Team,
     weapon::{Weapon, WeaponType}
 };
 
@@ -26,26 +25,6 @@ impl Character {
         print!("{}", self.format_life())
     }
 
-    pub fn attack(&self, target: &mut Character) {
-        let l = target.life - self.weapon.damage;
-        target.life = if l < 0 { 0 } else { l };
-
-        println!(
-            "{me} attacked {target} with {weapon}! Now his life is {life}",
-            me = self.name,
-            target = target.name,
-            weapon = self.weapon.w_type,
-            life = target.format_life()
-        );
-    }
-
-    pub fn attack_team(&self, target: &mut Team) {
-        for character in target.characters.iter_mut() {
-            if character.is_alive() {
-                self.attack(character)
-            }
-        }
-    }
 }
 
 #[derive(Debug)]

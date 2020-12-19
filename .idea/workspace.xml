@@ -43,6 +43,11 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -207,7 +212,7 @@
       <workItem from="1608304957574" duration="11663000" />
       <workItem from="1608331735646" duration="2661000" />
       <workItem from="1608385464722" duration="3022000" />
-      <workItem from="1608394528819" duration="12792000" />
+      <workItem from="1608394528819" duration="16965000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -349,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608153416377</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team">
+      <created>1608415928854</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608415928854</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +372,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="unstable" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -388,7 +412,8 @@
     <MESSAGE value="Add a &quot;ask&quot; function which gonna be used instead of all &quot;ask[...]&quot; functions" />
     <MESSAGE value="Usage of the new &quot;ask&quot; fn&#10;    -&gt; &quot;ask_team_name&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_type&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_name&quot; -&gt; fn&#10;    -&gt; new fn &quot;ask_which_character&quot;&#10;Fix a typo in the &quot;clear_console&quot; fn&#10;Game mechanics are not implemented yet" />
     <MESSAGE value="Update version to 0.1.1&#10;Add the crate version in the landing title" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update version to 0.1.1&#10;Add the crate version in the landing title" />
+    <MESSAGE value="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team" />
+    <option name="LAST_COMMIT_MESSAGE" value="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

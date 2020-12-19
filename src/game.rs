@@ -18,7 +18,7 @@ const VERSION: Option<&'static str> = option_env!("CARGO_PKG_VERSION");
 
 pub struct Game {
     teams: Vec<Team>,
-    current_team_i: u8,
+    current_team_i: usize,
 }
 
 impl Game {
@@ -103,13 +103,16 @@ Number: ", Ordinal(j + 1)),
         while self.alive_teams() > 1 {
             clear_console();
 
-            let current_team = self.get_current_team();
+            let current_team = &self.teams[self.current_team_i];
             println!("current team name: {}", current_team.name);
 
             if current_team.is_alive() {
-                let character = current_team.ask_which_character();
-                let next_team = self.get_next_team();
-                character.attack_team(next_team);
+                let character_i = current_team.ask_which_character_i();
+                self.attack_team(
+                    self.current_team_i,
+                    character_i,
+                    self.get_next_team_i()
+                );
 
                 io::stdout().flush().expect("Error while stdout flushing");
             }
@@ -131,19 +134,42 @@ Number: ", Ordinal(j + 1)),
         self
     }
 
-    fn get_current_team(&self) -> &Team {
-        &self.teams[self.current_team_i as usize]
+    pub fn attack(
+        &mut self,
+        from_team_i: usize,
+        from_character_i: usize,
+        target_team_i: usize,
+        target_character_i: usize
+    ) {
+        let l = self.teams[target_team_i].characters[target_character_i].life - self.teams[from_team_i].characters[from_character_i].weapon.damage;
+        self.teams[target_team_i].characters[target_character_i].life = std::cmp::max(0, l);
+
+        println!(
+            "{from} attacked {target} with {weapon}! Now his life is {life}",
+            from = self.teams[from_team_i].characters[from_character_i].name,
+            target = self.teams[target_team_i].characters[target_character_i].name,
+            weapon = self.teams[from_team_i].characters[from_character_i].weapon.w_type,
+            life = self.teams[target_team_i].characters[target_character_i].format_life()
+        );
     }
 
-    fn get_next_team(&mut self) -> &mut Team {
-        let i = self.get_next_team_i();
-        &mut self.teams[i as usize]
+    pub fn attack_team(
+        &mut self,
+        from_team_i: usize,
+        from_character_i: usize,
+        target_team_i: usize
+    ) {
+        for target_character_i in 0..self.teams[target_team_i].characters.len() {
+            if self.teams[target_team_i].characters[target_character_i].is_alive() {
+                self.attack(from_team_i, from_character_i, target_team_i, target_character_i);
+            }
+        }
     }
 
-    fn get_next_team_i(&self) -> u8 {
+    fn get_next_team_i(&self) -> usize {
         let max = self.teams.len();
 
-        if self.current_team_i + 1 == max as u8 {
+        if self.current_team_i + 1 == max {
             0
         } else {
             self.current_team_i + 1
