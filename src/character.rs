@@ -1,5 +1,8 @@
-use super::weapon::{Weapon, WeaponType};
 use std::fmt::{self, Display, Formatter};
+
+use super::{
+    weapon::{Weapon, WeaponType}
+};
 
 pub struct Character {
     pub(crate) name: String,
@@ -21,6 +24,7 @@ impl Character {
     pub fn print_life(&self) {
         print!("{}", self.format_life())
     }
+
 }
 
 #[derive(Debug)]
