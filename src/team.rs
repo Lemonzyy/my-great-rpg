@@ -1,4 +1,7 @@
-use super::character::Character;
+use super::{
+    util::ask,
+    character::Character
+};
 
 pub struct Team {
     pub(crate) name: String,
@@ -33,5 +36,32 @@ impl Team {
 
     pub fn print_comp(&self) {
         println!("The team {} is composed of:{}", self.name, self.get_formatted_chars());
+    }
+
+    pub fn ask_which_character(&self) -> &Character {
+        let parse = |input: &String| {
+            match input.parse::<usize>() {
+                Ok(val) => val,
+                Err(_) => {
+                    println!("'{}' is not a valid number!", input);
+                    0usize
+                }
+            }
+        };
+
+        let input = parse(&ask(
+            || print!(
+                "Team {}, which character do you want to use? {}\nNumber: ",
+                self.name,
+                self.get_formatted_chars(),
+            ),
+            |str| {
+                (1..=self.characters.len())
+                    .contains(&parse(str))
+            },
+            |str| println!("'{}' is not a valid number!", str),
+        ).unwrap());
+
+        &self.characters[input - 1]
     }
 }
