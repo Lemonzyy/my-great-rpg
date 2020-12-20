@@ -23,12 +23,13 @@ impl Team {
         let mut s: String = String::new();
         for (i, c) in self.characters.iter().enumerate() {
             s.push_str(&*format!(
-                "\n\t{i}. {char_type} character -> {name}: {life}, attack with {weapon}",
+                "\n\t{i}. {char_type} character -> {name}: {life}, attack with {weapon} ({damage} damage/attack)",
                 i = i + 1,
                 name = c.name,
                 char_type = c.char_type,
                 life = c.format_life(),
-                weapon = c.weapon.w_type.get_name()
+                weapon = c.weapon.name,
+                damage = c.weapon.damage
             ))
         }
         s
@@ -42,10 +43,7 @@ impl Team {
         let parse = |input: &String| {
             match input.parse::<usize>() {
                 Ok(val) => val,
-                Err(_) => {
-                    println!("'{}' is not a valid number!", input);
-                    0usize
-                }
+                Err(_) => 0usize
             }
         };
 
