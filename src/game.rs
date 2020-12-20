@@ -1,5 +1,5 @@
 use std::{
-    io::{self, Write},
+    io::{stdout, Write},
     thread::sleep,
     time::Duration,
 };
@@ -123,9 +123,9 @@ Number: ", Ordinal(j + 1)),
                     self.get_next_team_i()
                 );
 
-                io::stdout().flush().expect("Error while stdout flushing");
+                stdout().flush().expect("Error while stdout flushing");
 
-                println!("\nPress any key to continue...");
+                println!("\nPress any key to go the next round...");
                 read_line();
             }
 

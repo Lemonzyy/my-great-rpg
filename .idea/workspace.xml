@@ -17,7 +17,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/weapon.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/character.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/character.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +47,12 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="unstable" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -180,6 +186,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.doc" />
+        <item itemvalue="Cargo.check" />
         <item itemvalue="Cargo.doc" />
         <item itemvalue="Cargo.check" />
       </list>
