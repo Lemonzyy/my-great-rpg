@@ -8,8 +8,11 @@ pub struct Weapon {
 
 impl Weapon {
     pub fn new(w_type: WeaponType, damage: i32, name: String) -> Result<Self, String> {
+        if name.is_empty() {
+            return Err(format!("Weapon '{}' should not have an empty name", w_type))
+        }
         if damage == 0 {
-            return Err(format!("Weapon `{}` should not have a damage of {}", w_type, damage));
+            return Err(format!("Weapon '{}' should not have a damage of {}", w_type, damage));
         }
 
         Ok(Self {
