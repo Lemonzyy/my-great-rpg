@@ -13,7 +13,7 @@ use super::{
 };
 
 const TEAMS_NUMBER: u8 = 2;
-const CHARACTERS_NUMBER: u8 = 1;
+const CHARACTERS_NUMBER: u8 = 2;
 const VERSION: Option<&'static str> = option_env!("CARGO_PKG_VERSION");
 
 pub struct Game {
@@ -104,10 +104,19 @@ Number: ", Ordinal(j + 1)),
             clear_console();
 
             let current_team = &self.teams[self.current_team_i];
-            println!("current team name: {}", current_team.name);
 
             if current_team.is_alive() {
-                let character_i = current_team.ask_which_character_i();
+                let character_i = loop {
+                    let character_i = current_team.ask_which_character_i();
+
+                    if current_team.characters.get(character_i).is_some() &&
+                        current_team.characters.get(character_i).unwrap().is_alive() {
+                        break character_i;
+                    } else {
+                        println!("This character is dead!")
+                    }
+                };
+
                 self.attack_team(
                     self.current_team_i,
                     character_i,
@@ -115,6 +124,9 @@ Number: ", Ordinal(j + 1)),
                 );
 
                 io::stdout().flush().expect("Error while stdout flushing");
+
+                println!("\nPress any key to continue...");
+                read_line();
             }
 
             self.next_team();
