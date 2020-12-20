@@ -6,7 +6,7 @@ use crossterm::{
 };
 use crossterm::style::Styler;
 
-use super::{
+use crate::{
     character::Character,
     util::ask,
 };

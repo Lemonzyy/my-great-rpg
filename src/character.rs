@@ -1,6 +1,6 @@
 use std::fmt::{self, Display, Formatter};
 
-use super::{
+use crate::{
     weapon::{Weapon, WeaponType}
 };
 

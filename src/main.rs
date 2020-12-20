@@ -1,5 +1,7 @@
-use game::Game;
-use crate::util::read_line;
+use crate::{
+    game::Game,
+    util::read_line
+};
 
 mod util;
 mod game;

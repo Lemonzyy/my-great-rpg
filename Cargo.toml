@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 ordinal = "0.2.3"
 crossterm = "0.18.2"
+rand = "0.8.0"

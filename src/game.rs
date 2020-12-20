@@ -6,11 +6,12 @@ use std::{
 
 use ordinal::Ordinal;
 
-use super::{
+use crate::{
     character::CharacterType,
     team::Team,
     util::{ask, clear_console, print_title, read_line},
 };
+use rand::Rng;
 
 const TEAMS_NUMBER: u8 = 2;
 const CHARACTERS_NUMBER: u8 = 2;
@@ -153,8 +154,14 @@ Number: ", Ordinal(j + 1)),
         target_team_i: usize,
         target_character_i: usize
     ) {
-        let l = self.teams[target_team_i].characters[target_character_i].life - self.teams[from_team_i].characters[from_character_i].weapon.damage;
-        self.teams[target_team_i].characters[target_character_i].life = std::cmp::max(0, l);
+        let mut damage = self.teams[from_team_i].characters[from_character_i].weapon.damage;
+        if rand::thread_rng().gen_ratio(1, 5) {
+            damage += damage / 2;
+            println!("This time it's a critical strike!")
+        }
+
+        let life = self.teams[target_team_i].characters[target_character_i].life - damage;
+        self.teams[target_team_i].characters[target_character_i].life = std::cmp::max(0, life);
 
         println!(
             "{from} attacked {target} with {weapon}! Now his life is {life}",
