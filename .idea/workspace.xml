@@ -16,10 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/character.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/character.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/weapon.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/weapon.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +82,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -168,6 +170,11 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Cargo.Build" />
       <item itemvalue="Cargo.Run Release" />
@@ -212,7 +219,8 @@
       <workItem from="1608304957574" duration="11663000" />
       <workItem from="1608331735646" duration="2661000" />
       <workItem from="1608385464722" duration="3022000" />
-      <workItem from="1608394528819" duration="16965000" />
+      <workItem from="1608394528819" duration="17477000" />
+      <workItem from="1608474228467" duration="6006000" />
     </task>
     <task id="LOCAL-00001" summary="Implement read_line function">
       <created>1607365162330</created>
@@ -361,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608415928854</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Move attack and attack team functions from Character to Game and now getting all the values without references and just reads with indexes&#10;In Team, ask_which_character now return an index unlike a reference to a Character as before&#10;current_team_i index is now of a usize type&#10;Remove get_current_team function in Game">
+      <created>1608420635375</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1608420635375</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +393,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="unstable" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -413,7 +428,8 @@
     <MESSAGE value="Usage of the new &quot;ask&quot; fn&#10;    -&gt; &quot;ask_team_name&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_type&quot; -&gt; fn&#10;    -&gt; &quot;ask_character_name&quot; -&gt; fn&#10;    -&gt; new fn &quot;ask_which_character&quot;&#10;Fix a typo in the &quot;clear_console&quot; fn&#10;Game mechanics are not implemented yet" />
     <MESSAGE value="Update version to 0.1.1&#10;Add the crate version in the landing title" />
     <MESSAGE value="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team" />
-    <option name="LAST_COMMIT_MESSAGE" value="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team" />
+    <MESSAGE value="Move attack and attack team functions from Character to Game and now getting all the values without references and just reads with indexes&#10;In Team, ask_which_character now return an index unlike a reference to a Character as before&#10;current_team_i index is now of a usize type&#10;Remove get_current_team function in Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move attack and attack team functions from Character to Game and now getting all the values without references and just reads with indexes&#10;In Team, ask_which_character now return an index unlike a reference to a Character as before&#10;current_team_i index is now of a usize type&#10;Remove get_current_team function in Game" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

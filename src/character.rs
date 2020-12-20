@@ -5,14 +5,24 @@ use super::{
 };
 
 pub struct Character {
-    pub(crate) name: String,
     pub(crate) char_type: CharacterType,
+    pub(crate) name: String,
     pub(crate) life: i32,
     pub(crate) max_life: i32,
     pub(crate) weapon: Weapon,
 }
 
 impl Character {
+    pub fn new(char_type: CharacterType, name: String, life: i32, weapon: Weapon) -> Character {
+        Self {
+            char_type,
+            name,
+            life,
+            max_life: life,
+            weapon,
+        }
+    }
+
     pub fn is_alive(&self) -> bool {
         self.life > 0
     }
@@ -24,7 +34,6 @@ impl Character {
     pub fn print_life(&self) {
         print!("{}", self.format_life())
     }
-
 }
 
 #[derive(Debug)]
@@ -38,34 +47,10 @@ pub enum CharacterType {
 impl CharacterType {
     pub fn get_character(&self, name: String) -> Character {
         match self {
-            Self::Soldier => Character {
-                name,
-                char_type: Self::Soldier,
-                life: 100,
-                max_life: 100,
-                weapon: WeaponType::Sword.get_weapon(),
-            },
-            Self::Mage => Character {
-                name,
-                char_type: Self::Mage,
-                life: 80,
-                max_life: 80,
-                weapon: WeaponType::Wand.get_weapon(),
-            },
-            Self::Archer => Character {
-                name,
-                char_type: Self::Archer,
-                life: 100,
-                max_life: 100,
-                weapon: WeaponType::Bow.get_weapon(),
-            },
-            Self::Colossus => Character {
-                name,
-                char_type: Self::Colossus,
-                life: 150,
-                max_life: 150,
-                weapon: WeaponType::FistBump.get_weapon(),
-            }
+            Self::Soldier => Character::new(Self::Soldier, name, 120, WeaponType::Sword.get_weapon()),
+            Self::Mage => Character::new(Self::Mage, name, 80, WeaponType::Wand.get_weapon()),
+            Self::Archer => Character::new(Self::Archer, name, 100, WeaponType::Bow.get_weapon()),
+            Self::Colossus => Character::new(Self::Colossus, name, 180, WeaponType::FistBump.get_weapon()),
         }
     }
 }
