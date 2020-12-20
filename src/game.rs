@@ -125,7 +125,7 @@ Number: ", Ordinal(j + 1)),
 
                 stdout().flush().expect("Error while stdout flushing");
 
-                println!("\nPress any key to go the next round...");
+                println!("\nPress any key to go to the next round...");
                 read_line();
             }
 

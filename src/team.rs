@@ -1,6 +1,14 @@
+use std::io::stdout;
+
+use crossterm::{
+    QueueableCommand,
+    style::{self, Colorize}
+};
+use crossterm::style::Styler;
+
 use super::{
+    character::Character,
     util::ask,
-    character::Character
 };
 
 pub struct Team {
@@ -19,24 +27,34 @@ impl Team {
         alive
     }
 
-    pub fn get_formatted_chars(&self) -> String {
-        let mut s: String = String::new();
+    pub fn print_formatted_chars(&self) {
         for (i, c) in self.characters.iter().enumerate() {
-            s.push_str(&*format!(
-                "\n\t{i}. {char_type} character -> {name}: {life}, attack with {weapon} ({damage} damage/attack)",
+            let text = format!(
+                "{i}. {char_type} character -> {name}: {life}, attack with {weapon} ({damage} damage/attack)\n",
                 i = i + 1,
                 name = c.name,
                 char_type = c.char_type,
                 life = c.format_life(),
                 weapon = c.weapon.name,
                 damage = c.weapon.damage
-            ))
+            );
+
+            print!("\t");
+            stdout()
+                .queue(style::PrintStyledContent(
+                    if c.is_alive() {
+                        text.green()
+                    } else {
+                        text.crossed_out().red()
+                    }
+                ))
+                .expect("Error while printing a styled message");
         }
-        s
     }
 
     pub fn print_comp(&self) {
-        println!("The team {} is composed of:{}", self.name, self.get_formatted_chars());
+        println!("\nThe team {} is composed of:", self.name);
+        self.print_formatted_chars();
     }
 
     pub fn ask_which_character_i(&self) -> usize {
@@ -48,11 +66,14 @@ impl Team {
         };
 
         let input = parse(&ask(
-            || print!(
-                "Team {}, which character do you want to use? {}\nNumber: ",
-                self.name,
-                self.get_formatted_chars(),
-            ),
+            || {
+                println!(
+                    "Team {}, which character do you want to use?",
+                    self.name,
+                );
+                self.print_formatted_chars();
+                print!("Number: ")
+            },
             |str| {
                 (1..=self.characters.len())
                     .contains(&parse(str))

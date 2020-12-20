@@ -1,4 +1,5 @@
 use game::Game;
+use crate::util::read_line;
 
 mod util;
 mod game;
@@ -11,5 +12,6 @@ fn main() {
         .init()
         .start();
 
-    println!("finished.")
+    println!("Press a key to exit!");
+    read_line();
 }

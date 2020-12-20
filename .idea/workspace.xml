@@ -17,11 +17,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c18052b7-615c-454e-b838-bd00c917b54d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/character.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/character.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/team.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/team.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -387,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608481295871</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fix #3&#10;Add crossterm crate&#10;Remove unused functions (print_life in Character)">
+      <created>1608485921263</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1608485921263</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +446,8 @@
     <MESSAGE value="This commit contains errors!&#10;Add a small winning system in Game&#10;Add attack and attack_team in Character&#10;Move ask_which_character from Game to Team" />
     <MESSAGE value="Move attack and attack team functions from Character to Game and now getting all the values without references and just reads with indexes&#10;In Team, ask_which_character now return an index unlike a reference to a Character as before&#10;current_team_i index is now of a usize type&#10;Remove get_current_team function in Game" />
     <MESSAGE value="Add &quot;new&quot; function in Character&#10;Modify the stats for the characters and weapons&#10;Check if the selected character is alive for attacking the target" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;new&quot; function in Character&#10;Modify the stats for the characters and weapons&#10;Check if the selected character is alive for attacking the target" />
+    <MESSAGE value="Fix #3&#10;Add crossterm crate&#10;Remove unused functions (print_life in Character)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix #3&#10;Add crossterm crate&#10;Remove unused functions (print_life in Character)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
